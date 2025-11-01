@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Esther 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1:#ff9a9e; --bg2:#fad0c4; --accent:#ff5d8f; --glass: rgba(255,255,255,0.15);
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family:'Poppins', system-ui, Segoe UI, Roboto, Arial;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    /* 🌸 Navbar */
+    header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      color: #fff;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+    }
+
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .menu a:hover {
+      color: var(--accent);
+    }
+
+    /* 💖 Card principal */
+    .card {
+      width:100%; max-width:720px; background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border-radius:20px; padding:28px; box-shadow:0 10px 40px rgba(0,0,0,0.18);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
+      margin-top:100px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .topbar {
+      display:flex; align-items:center; gap:12px; justify-content:center;
+    }
+
+    .avatar {
+      width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #fff;
+    }
+
+    h1 {font-family:'Great Vibes',cursive;color:#fff;font-size:46px;margin:18px 0 6px}
+    p.lead {color:#fffdfd;font-size:18px;line-height:1.4;margin:0 0 16px;opacity:0.95}
+
+    .btn {
+      padding:10px 14px;border-radius:12px;border:none;font-weight:600;background:rgba(255,255,255,0.2);color:#fff;cursor:pointer;
+      transition:0.2s;
+    }
+    .btn:hover { background:rgba(255,255,255,0.35); }
+
+    .hearts {position:absolute;inset:0;pointer-events:none}
+    .heart {position:absolute;width:28px;height:28px;background:var(--accent);transform:rotate(-45deg);border-radius:6px;opacity:0.9}
+    .heart:before,.heart:after{content:"";position:absolute;background:var(--accent);width:28px;height:28px;border-radius:50%}
+    .heart:before{top:-14px;left:0}
+    .heart:after{left:14px;top:0}
+
+    @keyframes floaty{0%{transform: translateY(0) scale(1) rotate(-45deg);opacity:1}100%{transform: translateY(-220px) scale(0.8) rotate(-20deg);opacity:0}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h2>💖 Esther</h2>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="canciones.html">Canciones</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="card" role="main" aria-label="Mensaje para Esther">
+    <div class="topbar">
+      <img src="foto-esther.jpg" alt="Foto de Esther" class="avatar" />
+      <div>
+        <div class="title">BEBE DE LUZ</div>
+        <div class="subtitle">Este mensaje lo puedes abrir cuando te sientas triste hermosa o cuando pienses que no te quiero, que sepas que eres lo lindo que he visto 💞</div>
+      </div>
+    </div>
+
+    <h1>Esthercita</h1>
+    <p class="lead">NORMA ESTHER HERNANDEZ SOÑANES, te quiero mucho y te extraño todo el tiempo que no te veo. Cada vez que pienso en ti mi día se pinta de colores, y en mi corazón siempre hay un lugar que sólo tú llenas. 💖</p>
+
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center;">
+      <button class="btn" id="showLove">Ver sorpresa 💌</button>
+    </div>
+
+    <div class="hearts" aria-hidden="true"></div>
+  </div>
+
+  <script>
+    const heartsContainer = document.querySelector('.hearts');
+    function spawnHeart(x, y, size, delay, duration){
+      const el = document.createElement('div');
+      el.className = 'heart';
+      el.style.left = (x - size/2) + 'px';
+      el.style.top = (y - size/2) + 'px';
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.animation = `floaty ${duration}ms cubic-bezier(.2,.9,.3,1) ${delay}ms forwards`;
+      el.style.opacity = 0.95;
+      heartsContainer.appendChild(el);
+      setTimeout(()=> el.remove(), duration + delay + 200);
+    }
+
+    function randomInt(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+
+    setInterval(()=>{
+      const w = window.innerWidth; const h = window.innerHeight;
+      const count = randomInt(3,6);
+      for(let i=0;i<count;i++){
+        const x = randomInt(40, w-40);
+        const y = randomInt(h-180, h-60);
+        const size = randomInt(18,36);
+        const delay = randomInt(0,400);
+        const dur = randomInt(1600, 2600);
+        spawnHeart(x,y,size,delay,dur);
+      }
+    }, 900);
+
+    document.getElementById('showLove').addEventListener('click', ()=>{
+      const lines = [
+        'Eres mi sonrisa favorita 💫',
+        'Cuento los minutos para verte 💗',
+        'Siempre tuyo. 💕'
+      ];
+      let i=0; const lead = document.querySelector('.lead');
+      const original = lead.textContent;
+      lead.textContent = '';
+      function typeLine(){
+        if(i>=lines.length){ setTimeout(()=> lead.textContent = original, 2200); return; }
+        let j=0; const line = lines[i];
+        const interval = setInterval(()=>{
+          lead.textContent += line[j++] || '';
+          if(j>line.length){ clearInterval(interval); i++; setTimeout(typeLine, 700); }
+        }, 55);
+      }
+      typeLine();
+    });
+  </script>
+  
+</body>
+ <footer>
+    Hecho por Missael Perez con cariño para Esther
+  </footer>
+</html>
