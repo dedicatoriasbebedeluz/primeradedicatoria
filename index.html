@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Para Chicha ❤️</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -40,7 +42,6 @@
       min-height:100vh;
     }
 
-    /* Fondo animado */
     .hearts{
       position:fixed;
       inset:0;
@@ -265,10 +266,6 @@
       color:#f9edf7;
     }
 
-    .letter strong{
-      color:#fff;
-    }
-
     .cards{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -295,17 +292,6 @@
       margin-bottom:10px;
     }
 
-    .reason-card h3{
-      margin-bottom:10px;
-      font-size:1.1rem;
-    }
-
-    .reason-card p{
-      color:var(--muted);
-      line-height:1.8;
-      font-size:.95rem;
-    }
-
     .gallery{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -319,11 +305,6 @@
       border-radius:22px;
       border:1px solid rgba(255,255,255,.10);
       box-shadow:var(--shadow);
-      transition:.25s;
-    }
-
-    .gallery img:hover{
-      transform:scale(1.03);
     }
 
     .timeline{
@@ -337,16 +318,6 @@
       border-radius:22px;
       padding:22px;
       box-shadow:var(--shadow);
-    }
-
-    .moment h3{
-      color:#fff;
-      margin-bottom:8px;
-    }
-
-    .moment p{
-      color:var(--muted);
-      line-height:1.8;
     }
 
     .counter-box{
@@ -377,16 +348,6 @@
       color:#fff;
     }
 
-    .counter-item p{
-      color:var(--muted);
-      margin-top:4px;
-      font-size:.9rem;
-    }
-
-    .surprise-wrap{
-      text-align:center;
-    }
-
     .footer{
       text-align:center;
       padding:30px 15px 50px;
@@ -395,7 +356,6 @@
       z-index:1;
     }
 
-    /* modal */
     .modal{
       position:fixed;
       inset:0;
@@ -418,25 +378,6 @@
       border-radius:28px;
       padding:32px 24px;
       text-align:center;
-      box-shadow:0 25px 60px rgba(0,0,0,.45);
-      animation:showModal .3s ease;
-    }
-
-    @keyframes showModal{
-      from{ transform:scale(.92); opacity:0; }
-      to{ transform:scale(1); opacity:1; }
-    }
-
-    .modal-content h2{
-      font-family:'Great Vibes',cursive;
-      font-size:3rem;
-      margin-bottom:12px;
-    }
-
-    .modal-content p{
-      line-height:2;
-      color:#f9e8f7;
-      margin-bottom:20px;
     }
 
     .music-note{
@@ -448,7 +389,6 @@
     @media(max-width:950px){
       .hero{
         grid-template-columns:1fr;
-        padding-top:30px;
       }
 
       .cards,
@@ -458,349 +398,376 @@
     }
 
     @media(max-width:600px){
-      .menu{
-        gap:10px;
-      }
-
-      .hero-text h1{
-        font-size:3.5rem;
-      }
-
       .cards,
       .gallery,
       .counter{
         grid-template-columns:1fr;
       }
-
-      .section-title{
-        font-size:2.45rem;
-      }
-
-      .card-mini{
-        grid-template-columns:1fr;
-      }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="hearts" id="hearts"></div>
+<div class="hearts" id="hearts"></div>
 
-  <header>
-    <nav>
-      <div class="logo">Chicha ❤️</div>
-      <div class="menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#carta">Carta</a>
-        <a href="#razones">Razones</a>
-        <a href="#fotos">Fotos</a>
-        <a href="#sorpresa">Sorpresa</a>
-      </div>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <div class="logo">Chicha ❤️</div>
 
-  <section class="hero" id="inicio">
-    <div class="hero-text">
-      <h1>Para Chicha</h1>
-      <p class="subtitle">Una página hecha con todo mi corazón ✨</p>
-      <p class="intro">
-        Quería hacerte algo más especial que un simple mensaje.
-        Algo que pudieras abrir cuando me extrañes, cuando estés triste,
-        o cuando simplemente quieras recordar lo muchísimo que significas para mí.
-        Porque tú, mi chicha, no eres una persona cualquiera en mi vida…
-        <strong>eres alguien que hizo que mi mundo se viera más bonito.</strong>
-      </p>
+    <div class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#carta">Carta</a>
+      <a href="#razones">Razones</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#sorpresa">Sorpresa</a>
+    </div>
+  </nav>
+</header>
 
-      <div class="buttons">
-        <a href="#carta" class="btn btn-primary">Leer carta 💌</a>
-        <button class="btn btn-secondary" id="musicBtn">Reproducir canción 🎵</button>
-      </div>
+<section class="hero" id="inicio">
 
-      <p class="music-note">TE QUIERO COMO UNA VACA VIEJITA</p>
+  <div class="hero-text">
+    <h1>Para Chicha</h1>
+
+    <p class="subtitle">
+      Una página hecha con todo mi corazón ✨
+    </p>
+
+    <p class="intro">
+      Quería hacerte algo más especial que un simple mensaje.
+      Algo que pudieras abrir cuando me extrañes,
+      cuando estés triste o cuando simplemente quieras recordar
+      lo muchísimo que significas para mí ❤️
+    </p>
+
+    <div class="buttons">
+      <a href="#carta" class="btn btn-primary">
+        Leer carta 💌
+      </a>
+
+      <button class="btn btn-secondary" id="musicBtn">
+        Reproducir canción 🎵
+      </button>
     </div>
 
-    <div class="hero-card">
-      <!-- CAMBIA ESTA IMAGEN -->
-      <img class="photo-main" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop" alt="Foto especial para Elena">
+    <p class="music-note">
+      Sonando: :contentReference[oaicite:0]{index=0} ❤️
+    </p>
+  </div>
 
-      <div class="card-mini">
-        <div class="mini">
-          <h3 id="daysTogether">0</h3>
-          <p>Días contigo</p>
-        </div>
-        <div class="mini">
-          <h3>∞</h3>
-          <p>Besos pendientes</p>
-        </div>
-        <div class="mini">
-          <h3>1000%</h3>
-          <p>Especial para mí</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="hero-card">
 
-  <section id="carta">
-    <h2 class="section-title">Mi carta para ti</h2>
-    <p class="section-subtitle">Lo que a veces no alcanzo a decirte en una sola llamada o mensaje</p>
+    <img
+      class="photo-main"
+      src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1200&auto=format&fit=crop"
+      alt="Foto especial"
+    >
 
-    <div class="letter">
-      Mi chicha, desde que llegaste a mi vida empecé a sentir cosas muy bonitas que no se explican fácil.
-      Hay personas que pasan, hay personas que se quedan, y luego estás tú…
-      <strong>que te volviste una parte preciosa de mis días.</strong>
-      <br><br>
-      Me gusta tu forma de ser, tu esencia, tu presencia, tu manera de existir.
-      Me gusta cómo haces que momentos normales se sientan especiales.
-      Me gusta pensar en ti, hablar contigo, imaginar planes contigo y sonreír por cosas que sólo tú provocas.
-      <br><br>
-      Quiero que esta página te recuerde algo:
-      <strong>nunca eres poca cosa para mí.</strong>
-      Eres importante, eres valiosa, eres hermosa por dentro y por fuera, y tienes un lugar muy especial en mi corazón.
-      <br><br>
-      Cuando dudes, entra aquí. Cuando me extrañes, entra aquí. Cuando quieras sentirte querida, entra aquí.
-      Porque esto no está hecho por compromiso, ni por costumbre.
-      <strong>Está hecho porque realmente te quiero, Chicha.</strong>
-    </div>
-  </section>
+    <div class="card-mini">
 
-  <section id="razones">
-    <h2 class="section-title">Razones por las que te quiero</h2>
-    <p class="section-subtitle">Aunque la verdad, ni toda una página alcanzaría</p>
-
-    <div class="cards">
-      <div class="reason-card">
-        <span>✨</span>
-        <h3>Tu forma de iluminar</h3>
-        <p>
-          Tienes una manera muy tuya de hacer que todo se sienta más bonito.
-          Hasta en mis días simples, pensarte me cambia el ánimo.
-        </p>
+      <div class="mini">
+        <h3 id="daysTogether">0</h3>
+        <p>Días contigo</p>
       </div>
 
-      <div class="reason-card">
-        <span>💖</span>
-        <h3>Lo que me haces sentir</h3>
-        <p>
-          Contigo hay emoción, ternura, paz y muchas ganas de seguir creando recuerdos.
-          Eres de esas personas que se sienten de verdad.
-        </p>
+      <div class="mini">
+        <h3>∞</h3>
+        <p>Besos pendientes</p>
       </div>
 
-      <div class="reason-card">
-        <span>🌷</span>
-        <h3>Tu esencia</h3>
-        <p>
-          No se trata solo de lo bonita que eres, sino de todo lo que eres como persona.
-          Tu esencia vale muchísimo.
-        </p>
+      <div class="mini">
+        <h3>1000%</h3>
+        <p>Especial para mí</p>
       </div>
 
-      <div class="reason-card">
-        <span>🥹</span>
-        <h3>Tu sonrisa</h3>
-        <p>
-          Porque sí, tu sonrisa tiene algo peligroso:
-          me desarma, me calma y me enamora.
-        </p>
-      </div>
-
-      <div class="reason-card">
-        <span>🤍</span>
-        <h3>Lo especial que eres</h3>
-        <p>
-          No eres reemplazable, no eres una más, no eres cualquier historia.
-          Eres alguien que de verdad deja huella.
-        </p>
-      </div>
-
-      <div class="reason-card">
-        <span>🚀</span>
-        <h3>Lo que imagino contigo</h3>
-        <p>
-          Me gusta pensar en todo lo bonito que todavía nos falta vivir,
-          porque contigo hasta el futuro suena lindo.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="fotos">
-    <h2 class="section-title">Nuestros recuerdos</h2>
-    <p class="section-subtitle">Aun no tenemos fotitos pero pronto tendremos otey?</p>
-
-    <div class="gallery">
-      <img src="" alt="Recuerdo 1">
-      <img src="" alt="Recuerdo 2">
-      <img src="" alt="Recuerdo 3">
-      <img src="" alt="Recuerdo 4">
-    </div>
-  </section>
-
-  <section id="momentos">
-    <h2 class="section-title">Momentos que quiero contigo</h2>
-    <p class="section-subtitle">Pequeñas cosas que se vuelven grandes si son a tu lado</p>
-
-    <div class="timeline">
-      <div class="moment">
-        <h3>📍 Una salida simple, pero contigo</h3>
-        <p>
-          Ir a cualquier lugar, aunque no sea lujoso ni perfecto. Si voy contigo, ya vale totalmente la pena.
-        </p>
-      </div>
-
-      <div class="moment">
-        <h3>🌙 Hablar hasta tarde</h3>
-        <p>
-          De cosas profundas, tontas, bonitas o sin sentido. Esos momentos contigo se quedan conmigo.
-        </p>
-      </div>
-
-      <div class="moment">
-        <h3>📸 Crear recuerdos</h3>
-        <p>
-          Fotos, videos, mensajes, bromas, detalles… todo eso que después se vuelve tesoro.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contador">
-    <div class="counter-box">
-      <h2 class="section-title" style="margin-bottom:0;">Tiempo especial</h2>
-      <p class="section-subtitle" style="margin-bottom:0;">
-    
-      </p>
-
-      <div class="counter">
-        <div class="counter-item">
-          <h3 id="cDays">0</h3>
-          <p>Días</p>
-        </div>
-        <div class="counter-item">
-          <h3 id="cHours">0</h3>
-          <p>Horas</p>
-        </div>
-        <div class="counter-item">
-          <h3 id="cMinutes">0</h3>
-          <p>Minutos</p>
-        </div>
-        <div class="counter-item">
-          <h3 id="cSeconds">0</h3>
-          <p>Segundos</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="sorpresa">
-    <div class="surprise-wrap">
-      <h2 class="section-title">Hay algo más para ti</h2>
-      <p class="section-subtitle">Porque una sola carta no era suficiente</p>
-      <button class="btn btn-primary" id="openModal">Abrir sorpresa 🎁</button>
-    </div>
-  </section>
-
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <h2>Mi sorpresa para ti, Chicha ❤️</h2>
-      <p>
-        Quiero que nunca olvides esto:
-        <br><br>
-        <strong>te quiero muchísimo.</strong>
-        <br><br>
-        Y aunque a veces no encuentre las palabras perfectas,
-        siempre voy a querer demostrarte con detalles que eres alguien muy especial para mí.
-        Gracias por existir, por ser tú,
-        y por hacer que mi corazón tenga un motivo bonito para sonreír.
-      </p>
-      <button class="btn btn-secondary" id="closeModal">Cerrar</button>
     </div>
   </div>
 
-  <audio id="bgMusic" loop>
-    <source src="tu-cancion.mp3" type="audio/mpeg">
-  </audio>
+</section>
 
-  <footer class="footer">
-    Hecho por Missael Pérez con mucho cariño para Chicha 💘
-  </footer>
+<section id="carta">
 
-  <script>
-    const heartsContainer = document.getElementById("hearts");
+  <h2 class="section-title">
+    Mi carta para ti
+  </h2>
 
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = Math.random() > 0.5 ? "❤" : "✨";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (Math.random() * 18 + 14) + "px";
-      heart.style.animationDuration = (Math.random() * 5 + 6) + "s";
-      heart.style.opacity = Math.random() * 0.5 + 0.1;
-      heartsContainer.appendChild(heart);
+  <p class="section-subtitle">
+    Lo que a veces no alcanzo a decirte
+  </p>
 
-      setTimeout(() => {
-        heart.remove();
-      }, 12000);
+  <div class="letter">
+    Mi chicha, desde que llegaste a mi vida
+    empecé a sentir cosas muy bonitas ✨
+    <br><br>
+
+    Gracias por existir, por hacerme sonreír
+    y por convertir días normales en momentos especiales ❤️
+  </div>
+
+</section>
+
+<section id="razones">
+
+  <h2 class="section-title">
+    Razones por las que te quiero
+  </h2>
+
+  <div class="cards">
+
+    <div class="reason-card">
+      <span>✨</span>
+      <h3>Tu esencia</h3>
+      <p>Eres una persona muy especial para mí.</p>
+    </div>
+
+    <div class="reason-card">
+      <span>💖</span>
+      <h3>Tu sonrisa</h3>
+      <p>Tu sonrisa tiene algo que me calma y me enamora.</p>
+    </div>
+
+    <div class="reason-card">
+      <span>🌷</span>
+      <h3>Tu forma de ser</h3>
+      <p>Contigo todo se siente más bonito.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="fotos">
+
+  <h2 class="section-title">
+    Nuestros recuerdos
+  </h2>
+
+  <div class="gallery">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+  </div>
+
+</section>
+
+<section id="contador">
+
+  <div class="counter-box">
+
+    <h2 class="section-title" style="margin-bottom:0;">
+      Tiempo especial
+    </h2>
+
+    <p class="section-subtitle" style="margin-bottom:0;">
+      Desde el 11 de diciembre del 2025 ❤️
+    </p>
+
+    <div class="counter">
+
+      <div class="counter-item">
+        <h3 id="cDays">0</h3>
+        <p>Días</p>
+      </div>
+
+      <div class="counter-item">
+        <h3 id="cHours">0</h3>
+        <p>Horas</p>
+      </div>
+
+      <div class="counter-item">
+        <h3 id="cMinutes">0</h3>
+        <p>Minutos</p>
+      </div>
+
+      <div class="counter-item">
+        <h3 id="cSeconds">0</h3>
+        <p>Segundos</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<section id="sorpresa">
+
+  <div style="text-align:center;">
+
+    <h2 class="section-title">
+      Hay algo más para ti
+    </h2>
+
+    <button class="btn btn-primary" id="openModal">
+      Abrir sorpresa 🎁
+    </button>
+
+  </div>
+
+</section>
+
+<div class="modal" id="modal">
+
+  <div class="modal-content">
+
+    <h2 style="font-family:'Great Vibes',cursive; font-size:3rem;">
+      Mi sorpresa para ti ❤️
+    </h2>
+
+    <p style="line-height:2;">
+      Quiero que nunca olvides esto:
+      <br><br>
+      <strong>te quiero muchísimo.</strong>
+    </p>
+
+    <button class="btn btn-secondary" id="closeModal">
+      Cerrar
+    </button>
+
+  </div>
+
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="Kilometros-SinBandera.mp3" type="audio/mpeg">
+</audio>
+
+<footer class="footer">
+  Hecho por Missael Pérez con mucho cariño ❤️
+</footer>
+
+<script>
+
+  const heartsContainer = document.getElementById("hearts");
+
+  function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = Math.random() > 0.5 ? "❤" : "✨";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+      (Math.random() * 18 + 14) + "px";
+
+    heart.style.animationDuration =
+      (Math.random() * 5 + 6) + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 12000);
+  }
+
+  setInterval(createHeart, 350);
+
+  // Música
+
+  const music = document.getElementById("bgMusic");
+
+  const musicBtn = document.getElementById("musicBtn");
+
+  let isPlaying = false;
+
+  musicBtn.addEventListener("click", () => {
+
+    if (!isPlaying) {
+
+      music.play();
+
+      musicBtn.textContent =
+        "Pausar canción ⏸️";
+
+      isPlaying = true;
+
+    } else {
+
+      music.pause();
+
+      musicBtn.textContent =
+        "Reproducir canción 🎵";
+
+      isPlaying = false;
     }
+  });
 
-    setInterval(createHeart, 350);
+  // Modal
 
-    // Música
-    const music = document.getElementById("bgMusic");
-    const musicBtn = document.getElementById("musicBtn");
-    let isPlaying = false;
+  const modal =
+    document.getElementById("modal");
 
-    musicBtn.addEventListener("click", () => {
-      if (!isPlaying) {
-        music.play();
-        musicBtn.textContent = "Pausar canción ⏸️";
-        isPlaying = true;
-      } else {
-        music.pause();
-        musicBtn.textContent = "Reproducir canción 🎵";
-        isPlaying = false;
-      }
-    });
+  document
+    .getElementById("openModal")
+    .addEventListener("click", () => {
 
-    // Modal sorpresa
-    const modal = document.getElementById("modal");
-    document.getElementById("openModal").addEventListener("click", () => {
       modal.classList.add("active");
-    });
+  });
 
-    document.getElementById("closeModal").addEventListener("click", () => {
+  document
+    .getElementById("closeModal")
+    .addEventListener("click", () => {
+
       modal.classList.remove("active");
-    });
+  });
 
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-      }
-    });
+  modal.addEventListener("click", (e) => {
 
-    // FECHA ESPECIAL - CAMBIA ESTA FECHA
-    const specialDate = new Date("2025-12-01T00:00:00");
-
-    function updateCounter() {
-      const now = new Date();
-      const diff = now - specialDate;
-
-      if (diff < 0) return;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("cDays").textContent = days;
-      document.getElementById("cHours").textContent = hours;
-      document.getElementById("cMinutes").textContent = minutes;
-      document.getElementById("cSeconds").textContent = seconds;
-      document.getElementById("daysTogether").textContent = days;
+    if (e.target === modal) {
+      modal.classList.remove("active");
     }
+  });
 
-    setInterval(updateCounter, 1000);
-    updateCounter();
-  </script>
+  // Fecha especial
+
+  const specialDate =
+    new Date("2025-12-11T00:00:00");
+
+  function updateCounter() {
+
+    const now = new Date();
+
+    const diff = now - specialDate;
+
+    if (diff < 0) return;
+
+    const days =
+      Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    const hours =
+      Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+    const minutes =
+      Math.floor((diff / (1000 * 60)) % 60);
+
+    const seconds =
+      Math.floor((diff / 1000) % 60);
+
+    document.getElementById("cDays")
+      .textContent = days;
+
+    document.getElementById("cHours")
+      .textContent = hours;
+
+    document.getElementById("cMinutes")
+      .textContent = minutes;
+
+    document.getElementById("cSeconds")
+      .textContent = seconds;
+
+    document.getElementById("daysTogether")
+      .textContent = days;
+  }
+
+  setInterval(updateCounter, 1000);
+
+  updateCounter();
+
+</script>
+
 </body>
 </html>
