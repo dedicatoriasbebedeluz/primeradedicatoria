@@ -720,91 +720,80 @@
   <source src="Kilometros-SinBandera.mp3" type="audio/mpeg">
 </audio>
 
-  <footer class="footer">
-    Hecho por Missael Pérez con mucho cariño para Chicha 💘
-  </footer>
+<footer class="footer">
+  Hecho por Missael Pérez con mucho cariño para Chicha 💘
+</footer>
 
-  <script>
-    const heartsContainer = document.getElementById("hearts");
+<script>
+  const heartsContainer = document.getElementById("hearts");
 
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = Math.random() > 0.5 ? "❤" : "✨";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (Math.random() * 18 + 14) + "px";
-      heart.style.animationDuration = (Math.random() * 5 + 6) + "s";
-      heart.style.opacity = Math.random() * 0.5 + 0.1;
-      heartsContainer.appendChild(heart);
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = Math.random() > 0.5 ? "❤" : "✨";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 18 + 14) + "px";
+    heart.style.animationDuration = (Math.random() * 5 + 6) + "s";
+    heart.style.opacity = Math.random() * 0.5 + 0.1;
+    heartsContainer.appendChild(heart);
 
-      setTimeout(() => {
-        heart.remove();
-      }, 12000);
-    }
-
-    setInterval(createHeart, 350);
-
-    // Música
-  const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-
-music.volume = 1;
-
-document.addEventListener("click", () => {
-  music.play().catch(() => {});
-}, { once: true });
-
-let isPlaying = false;
-
-musicBtn.addEventListener("click", () => {
-  if (!isPlaying) {
-    music.play();
-    musicBtn.textContent = "Pausar canción ⏸️";
-    isPlaying = true;
-  } else {
-    music.pause();
-    musicBtn.textContent = "Reproducir canción 🎵";
-    isPlaying = false;
+    setTimeout(() => {
+      heart.remove();
+    }, 12000);
   }
-});
 
-    // Modal sorpresa
-    const modal = document.getElementById("modal");
-    document.getElementById("openModal").addEventListener("click", () => {
-      modal.classList.add("active");
-    });
+  setInterval(createHeart, 350);
 
-    document.getElementById("closeModal").addEventListener("click", () => {
+  // Música automática
+  const music = document.getElementById("bgMusic");
+
+  music.volume = 1;
+
+  // Se reproduce al primer click/toque
+  document.addEventListener("click", () => {
+    music.play().catch(() => {});
+  }, { once: true });
+
+  // Modal sorpresa
+  const modal = document.getElementById("modal");
+
+  document.getElementById("openModal").addEventListener("click", () => {
+    modal.classList.add("active");
+  });
+
+  document.getElementById("closeModal").addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
       modal.classList.remove("active");
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-      }
-    });
-const specialDate = new Date("2025-12-11T00:00:00");
-
-    function updateCounter() {
-      const now = new Date();
-      const diff = now - specialDate;
-
-      if (diff < 0) return;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("cDays").textContent = days;
-      document.getElementById("cHours").textContent = hours;
-      document.getElementById("cMinutes").textContent = minutes;
-      document.getElementById("cSeconds").textContent = seconds;
-      document.getElementById("daysTogether").textContent = days;
     }
+  });
 
-    setInterval(updateCounter, 1000);
-    updateCounter();
-  </script>
+  // FECHA ESPECIAL
+  const specialDate = new Date("2025-05-11T00:00:00");
+
+  function updateCounter() {
+    const now = new Date();
+    const diff = now - specialDate;
+
+    if (diff < 0) return;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("cDays").textContent = days;
+    document.getElementById("cHours").textContent = hours;
+    document.getElementById("cMinutes").textContent = minutes;
+    document.getElementById("cSeconds").textContent = seconds;
+    document.getElementById("daysTogether").textContent = days;
+  }
+
+  setInterval(updateCounter, 1000);
+  updateCounter();
+</script>
 </body>
 </html>
