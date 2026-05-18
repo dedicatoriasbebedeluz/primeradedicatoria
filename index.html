@@ -717,8 +717,8 @@
     </div>
   </div>
 
-  <audio id="bgMusic" loop>
-  <source src="Kilometros-SinBandera.mp3.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop autoplay>
+  <source src="Kilometros-SinBandera.mp3" type="audio/mpeg">
 </audio>
 
   <footer class="footer">
@@ -746,19 +746,13 @@
     setInterval(createHeart, 350);
 
     // Música
-    const music = document.getElementById("bgMusic");
-music.volume = 1;
-music.load();
-
+   const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 let isPlaying = false;
 
 musicBtn.addEventListener("click", () => {
   if (!isPlaying) {
-    music.play().catch(error => {
-      console.log("Error al reproducir:", error);
-    });
-
+    music.play();
     musicBtn.textContent = "Pausar canción ⏸️";
     isPlaying = true;
   } else {
