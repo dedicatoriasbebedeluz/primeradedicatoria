@@ -746,8 +746,15 @@
     setInterval(createHeart, 350);
 
     // Música
-   const music = document.getElementById("bgMusic");
+  const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
+
+music.volume = 1;
+
+document.addEventListener("click", () => {
+  music.play().catch(() => {});
+}, { once: true });
+
 let isPlaying = false;
 
 musicBtn.addEventListener("click", () => {
