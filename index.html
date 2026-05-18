@@ -747,20 +747,26 @@
 
     // Música
     const music = document.getElementById("bgMusic");
-    const musicBtn = document.getElementById("musicBtn");
-    let isPlaying = false;
+music.volume = 1;
+music.load();
 
-    musicBtn.addEventListener("click", () => {
-      if (!isPlaying) {
-        music.play();
-        musicBtn.textContent = "Pausar canción ⏸️";
-        isPlaying = true;
-      } else {
-        music.pause();
-        musicBtn.textContent = "Reproducir canción 🎵";
-        isPlaying = false;
-      }
+const musicBtn = document.getElementById("musicBtn");
+let isPlaying = false;
+
+musicBtn.addEventListener("click", () => {
+  if (!isPlaying) {
+    music.play().catch(error => {
+      console.log("Error al reproducir:", error);
     });
+
+    musicBtn.textContent = "Pausar canción ⏸️";
+    isPlaying = true;
+  } else {
+    music.pause();
+    musicBtn.textContent = "Reproducir canción 🎵";
+    isPlaying = false;
+  }
+});
 
     // Modal sorpresa
     const modal = document.getElementById("modal");
