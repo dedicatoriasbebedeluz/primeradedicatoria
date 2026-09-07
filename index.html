@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -480,6 +481,43 @@
         grid-template-columns:1fr;
       }
     }
+  
+/* ✨ Mejora visual: conserva la estructura y funcionalidad original */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(circle at 50% 20%,rgba(255,122,181,.08),transparent 28%),
+             radial-gradient(circle at 50% 85%,rgba(255,209,102,.06),transparent 30%);
+}
+header{box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.menu a{padding:8px 12px;border-radius:999px}
+.menu a:hover{background:rgba(255,255,255,.08)}
+.hero-text h1{animation:softGlow 3s ease-in-out infinite alternate}
+@keyframes softGlow{
+  from{text-shadow:0 0 12px rgba(255,122,181,.10)}
+  to{text-shadow:0 0 30px rgba(255,122,181,.35),0 0 55px rgba(255,209,102,.10)}
+}
+.hero-card,.letter,.reason-card,.moment,.counter-box{
+  box-shadow:0 20px 55px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.letter{position:relative;overflow:hidden}
+.letter::before{
+  content:"❤";position:absolute;right:24px;top:14px;font-size:4rem;opacity:.06;transform:rotate(12deg)
+}
+.reason-card,.moment,.mini,.counter-item{
+  transition:transform .25s ease,background .25s ease,border-color .25s ease;
+}
+.reason-card:hover,.moment:hover{
+  transform:translateY(-5px);background:rgba(255,255,255,.10);
+}
+.btn-primary{
+  background:linear-gradient(135deg,#ff4f9a,#ff7ab5,#ffd166);
+  background-size:200% 200%;animation:buttonShine 5s ease infinite;
+}
+@keyframes buttonShine{
+  0%,100%{background-position:0% 50%}50%{background-position:100% 50%}
+}
+.footer{border-top:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.08)}
+
   </style>
 </head>
 <body>
@@ -559,6 +597,29 @@
       Cuando dudes, entra aquí. Cuando me extrañes, entra aquí. Cuando quieras sentirte querida, entra aquí.
       Porque esto no está hecho por compromiso, ni por costumbre.
       <strong>Está hecho porque realmente te quiero, Chicha.</strong>
+
+      <div style="margin-top:28px;padding:24px 22px;border:1px solid rgba(255,122,181,.22);border-radius:22px;background:linear-gradient(135deg,rgba(255,79,154,.10),rgba(255,209,102,.05));text-align:center;">
+        <div style="font-family:'Great Vibes',cursive;font-size:2.2rem;color:#ffb1d0;margin-bottom:8px;">Una pequeña dedicatoria para ti ❤️</div>
+        <p style="margin:0;line-height:2;color:#f9e8f7;">
+          Chicha, <strong>sé que te quiero seguir conociendo.</strong> Quiero descubrir cada parte de ti,
+          tus sueños, tus miedos, tus pequeñas manías, tus días buenos y también aquellos en los que
+          necesites que alguien se quede contigo. No quiero apresurar lo que sentimos; quiero vivirlo,
+          conocerlo y cuidarlo poquito a poquito.
+          <br><br>
+          Y también quiero ser sincero contigo: <strong>espero poder ser lo suficiente esta vez.</strong>
+          No porque quiera ser perfecto, sino porque quiero dar lo mejor de mí, aprender de lo que haga
+          mal y demostrarte con hechos lo mucho que me importas.
+          <br><br>
+          No sé exactamente qué nos tenga preparado la vida, pero sí sé que me gustaría intentarlo contigo.
+          Y si algún día las cosas no salen como quisiera, al menos quiero poder mirar atrás y saber que
+          <strong>lo intenté de corazón</strong>, que fui sincero con lo que sentía y que nunca dejé de
+          valorar la oportunidad de haberte conocido.
+          <br><br>
+          Porque entre tantas personas, coincidimos tú y yo… y para mí, eso ya es algo bonito que quiero
+          seguir descubriendo. <strong>Te quiero, Chicha. Y quiero seguir conociéndote. ❤️</strong>
+        </p>
+      </div>
+
     </div>
   </section>
 
